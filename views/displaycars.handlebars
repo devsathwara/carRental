@@ -1,0 +1,28 @@
+{{#each cars}}
+<div class="media">
+   <img src="{{owner.image}}" class="mr-3" width="64px" height="64px"> 
+  <div class="media-body">
+ <a href="/views/displaycars.handlebars" >    <h5 class="mt-0">{{make}} {{model}} {{year}}</h5></a>
+     <div class="row">
+       {{#each image}}
+<div class="col-sm">
+        <a href="/views/displaycars.handlebars" >   <img src="{{imageUrl}}" class="img-fluid" width="300px" height="auto">
+</div>
+   {{else}}
+  <a href="/views/displaycars.handlebars" ><img src="/public/image/logo.jpeg" alt=""></a>
+   {{/each}}
+  </div>
+   <p>${{pricePerHour}} per hour</p>
+   <p>${{pricePerWeek}} per week</p>
+   <small>{{location}}</small>
+</div>
+</div>
+<hr>
+{{else}}
+<p>No cars found</p>
+{{/each}}
+<style>
+    body{
+        background-image: url('/image/carrent.jpg');
+    }
+</style>

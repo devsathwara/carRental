@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{car.picture}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{car.make}} {{car.model}}</h5>
+    <p class="card-text">{{car.pricePerWeek}}/day</p>
+    <p class="card-text">Location:{{car.location}}</p>
+    <a href="/RentCar/{{car._id}}"></a>
+  </div>
+</div>
+</div>
+<div class="col-sm-4">
+    <form action="/calculateTotal/{{car._id}}" method="POST">
+    <div class="form-group">
+        <label for="days">How many days you wanna rent?</label>
+        <select name="days" class="form-control">
+            <option value="0">0 days</option>
+            <option value="1">1 days</option>
+            <option value="2">2 days</option>
+            <option value="3">3 days</option>
+            <option value="4">4 days</option>
+            <option value="5">5 days</option>
+        </select>
+        <div class="form-group">
+            <button type="submit" class="form-control btn btn-danger">Calculate Total</button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+<style>
+    body{
+        background-image: url('/image/carrent.jpg');
+    }
+</style>

@@ -1,0 +1,54 @@
+{{!-- {{#each cars}}
+<div class="media">
+   <img src="{{owner.image}}" class="mr-3" width="64px" height="64px"> 
+  <div class="media-body">
+    <h5 class="mt-0">{{make}} {{model}} {{year}}</h5>
+     <div class="row">
+       {{#each image}}
+<div class="col-sm">
+         <img src="{{imageUrl}}" class="img-fluid" width="300px" height="auto">
+</div>
+   {{else}}
+  <img src="/public/image/logo.jpeg" alt="">
+   {{/each}}
+  </div>
+   <p>{{pricePerWeek}} RS per Day</p>
+   <small>{{location}}</small>
+   <small>{{email}}</small>
+</div>
+</div>
+<hr>
+{{else}}
+<p>No cars found</p>
+{{/each}} --}}
+
+
+{{#each cars}}
+<a href="/RentCar/{{_id}}">
+<div class="container">
+<div class="row">
+  <div class="col-sm-4">
+<div class="card" style="width: 18rem;">
+{{#each image}}
+<img class="card-img-top" src="{{imageUrl}}" alt="Card image cap" width="300px" height="auto">
+{{else}}
+<img src="/public/image/logo.jpeg" alt="">
+{{/each}}
+</div>
+<div class="card-body">
+    <h5 class="card-title">Car Name:{{make}} Model:{{model}} Year:{{year}}</h5>
+    <p class="card-text">Price per Day: {{pricePerWeek}} RS per Day </p>
+    <p class="card-text">Location: {{location}} </p>
+    <p class="card-text">Type: {{type}} </p>
+    <a href="/RentCar/{{_id}}" class="btn btn-danger ">Rent Now</a>
+</div>
+<hr width="100%">
+</div>
+</div>
+{{/each}}
+</a>
+<style>
+    body{
+        background-image: url('/image/carrent.jpg');
+    }
+</style>
